@@ -2,16 +2,24 @@ $(document).ready(function(){
   $('.p1').on('click', function(){
     $('.p1').addClass('extend')
     $('.p2, .p4').addClass('shutter')
+    $('.p3').addClass('clear extend')
   });
 
-  $('.p2, .p3').on('click', function(){
+  $('.p2').on('click', function(){
     var id = parseInt($(this).attr('id'));
+    shutterPanels(id);
+  });
+
+  $('.p3').on('click', function(){
+    var id = parseInt($(this).attr('id'));
+    $(this).addClass('extend')
     shutterPanels(id);
   });
 
   $('.p4').on('click', function(){
     $('.p3').addClass('shutter')
     $('.p1').addClass('retract')
+    $('.p2').addClass('clear')
   });
 
   $('.logo').on('click', function(){
@@ -31,8 +39,7 @@ $(document).ready(function(){
 
   function returnPanels() {
     for (var i = 1; i < 5; i++) {
-      $('#'+i).removeClass('shutter')
+      $('#'+i).removeClass('shutter clear extend retract')
     }
-    $('.p1').removeClass('extend retract')
   }
 });
