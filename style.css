@@ -1,5 +1,11 @@
 body {
-    overflow: hidden;
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .square {
@@ -45,7 +51,7 @@ body {
   font-family: 'Open Sans';
   font-weight: 700;
   opacity: 1;
-  transition: opacity .1s, left .15s;
+  transition: opacity .1s, left .15s, right .3s;
 }
 
 .clear .header {
@@ -129,7 +135,7 @@ body {
   background: -ms-linear-gradient(-135deg,  #dfebe9 26%,#edf7ee 100%); /* IE10+ */
   background: linear-gradient(-135deg,  #dfebe9 26%,#edf7ee 100%); /* W3C */
   z-index: 3;
-  left: 0;
+  right: 0;
   bottom: 0;
   width: 100%;
   height: 42%;
@@ -139,11 +145,12 @@ body {
   text-shadow: 1px 4px 6px #DFEBE9, 0 0 0 #000, 1px 4px 6px #DFEBE9;
   color: rgba(181,190,189, 0.7);
   top: 10px;
-  left: 37%;
+  right: 43%;
 }
 
 .p3.extend .header {
-  left: 41%;
+  left: auto;
+  right: 20px;
 }
 
 .p3.shutter {

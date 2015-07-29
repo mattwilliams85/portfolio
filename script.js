@@ -23,7 +23,11 @@ $(document).ready(function(){
   });
 
   $('.logo').on('click', function(){
-    returnPanels();
+    if ($('.p1, .p2, .p3, .p4').hasClass('shutter')) {
+      returnPanels();
+    } else {
+      shutterPanels(0);
+    }
   });
 
 
