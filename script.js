@@ -1,8 +1,9 @@
 $(document).ready(function(){
   $('.p1').on('click', function(){
-    $('.p1').addClass('extend')
-    $('.p2, .p4').addClass('shutter')
-    $('.p3').addClass('clear extend')
+    $('.connect').addClass('active');
+    $('.p1').addClass('extend');
+    $('.p2, .p4').addClass('shutter');
+    $('.p3').addClass('clear extend');
   });
 
   $('.p2').on('click', function(){
@@ -27,11 +28,12 @@ $(document).ready(function(){
     if ($('.panel').hasClass('active')) {
       returnPanels();
     } else {
-      $('.panel').toggleClass('active');
+      $(this).toggleClass('active');
     }
   });
 
   $('.logo').on('click', function(){
+    $('.logo').off('mouseover mouseleave')
     if ($('.p1, .p2, .p3, .p4').hasClass('shutter')) {
       returnPanels();
     } else {
@@ -40,10 +42,18 @@ $(document).ready(function(){
     }
   });
 
-  $('.logo').on('mouseenter mouseleave', function(){
-    $('.landing-sect').toggleClass('active');
-  });
+  $('.logo').mouseover(fadeIn);
+  $('.logo').mouseleave(fadeOut);
 
+  function fadeIn() {
+    $('.landing-sect span').stop();
+    $('.landing-sect span').fadeIn(3000);
+  }
+
+  function fadeOut() {
+    $('.landing-sect span').stop();
+    $('.landing-sect span').fadeOut(3000);
+  }
 
   function shutterPanels(id) {
     if (!id) $('.landing-sect').removeClass('shutter');
@@ -58,6 +68,7 @@ $(document).ready(function(){
 
   function returnPanels() {
     $('.landing-sect').addClass('shutter');
+    $('section').removeClass('active');
     for (var i = 1; i < 5; i++) {
       $('#'+i).removeClass('shutter clear extend retract start active')
     }
