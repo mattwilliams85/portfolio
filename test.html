@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+
+</body>
+</html>
+
+<div class="flip-container">
+  <div class="flipper">
+    <div class="front">
+      <img src="badges/badge1.png">
+    </div>
+    <div class="back">
+      <img src="test.png">
+      <span>javascript</span>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+}
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  height: 150px;
+  width: 138px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  text-align: center;
+  line-height: 104pt;
+  font-size: 16pt;
+  color: #fff;
+  z-index: 1;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
+</style>

@@ -23,6 +23,7 @@ $(document).ready(function(){
 
   $('.p4').on('click', function(){
     if ($(this).hasClass('active')) return;
+    $('.box').show();
     $('.p3').addClass('shutter');
     $('.p1').addClass('retract');
     $('.p2').addClass('clear');
@@ -81,7 +82,7 @@ $(document).ready(function(){
   }
 
   function returnPanels() {
-    $('.clouds.inverse').hide();
+    $('.clouds.inverse, .box').hide();
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
     for (var i = 1; i < 5; i++) {
