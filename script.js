@@ -1,5 +1,6 @@
 $(document).ready(function(){
   $('.p1').on('click', function(){
+    if ($(this).hasClass('active')) return;
     $('.connect').addClass('active');
     $('.p1').addClass('extend');
     $('.p2, .p4').addClass('shutter');
@@ -7,21 +8,26 @@ $(document).ready(function(){
   });
 
   $('.p2').on('click', function(){
+    if ($(this).hasClass('active')) return;
     var id = parseInt($(this).attr('id'));
     shutterPanels(id);
   });
 
   $('.p3').on('click', function(){
+    $('.clouds.inverse').show();
+    if ($(this).hasClass('active')) return;
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
     shutterPanels(id);
   });
 
   $('.p4').on('click', function(){
+    if ($(this).hasClass('active')) return;
     $('.p3').addClass('shutter');
     $('.p1').addClass('retract');
     $('.p2').addClass('clear');
   });
+
 
   $('.panel').on('click', function(){
     if ($('.panel').hasClass('start')) return;
@@ -38,6 +44,7 @@ $(document).ready(function(){
       returnPanels();
     } else {
       $('.p3').addClass('start');
+      $('.clouds.inverse').show();
       shutterPanels(0);
     }
   });
@@ -56,6 +63,7 @@ $(document).ready(function(){
   }
 
   function shutterPanels(id) {
+    hideClouds();
     if (!id) $('.landing-sect').removeClass('shutter');
     var n = id;
     for (var i = 0; i < 4; i++) {
@@ -66,7 +74,14 @@ $(document).ready(function(){
     }
   }
 
+  function hideClouds() {
+    setTimeout(function(){
+      $('clouds').hide();
+    },300);
+  }
+
   function returnPanels() {
+    $('.clouds.inverse').hide();
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
     for (var i = 1; i < 5; i++) {

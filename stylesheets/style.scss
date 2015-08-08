@@ -1,5 +1,6 @@
 body {
   overflow: hidden;
+  margin: 0;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -7,6 +8,73 @@ body {
   -ms-user-select: none;
   user-select: none;
   font-family: 'Open Sans';
+  // background: #e0e0e0;
+}
+
+// .clouds.inverse {
+//   display: none;
+// }
+
+// .tag-box {
+//   color: #51b6e5;
+// }
+
+.clouds {
+  &.inverse {
+    opacity: 0.05;
+    z-index: 99;
+    position: relative;
+    -webkit-transform: scaleY(-1);
+    .cloud {
+      bottom: 0;
+      top: -99vh;
+    }
+  }
+}
+
+.cloud {
+  height: 50vh;
+  width: 4000px;
+  left: -2000px;
+  position: absolute;
+}
+
+
+
+#cloud-1 {
+  background: url('../clouds1-alt.png'); 
+  background-repeat-y: no-repeat;
+  background-repeat-x: repeat;
+  background-position: bottom left;
+  animation: drift 250s linear;
+  animation-iteration-count: infinite;
+  z-index: 3;
+}
+
+#cloud-2 {
+  background: url('../clouds2.png');
+  background-repeat-y: no-repeat;
+  background-repeat-x: repeat;
+  background-position: bottom left;
+  animation: drift 200s linear;
+  animation-iteration-count: infinite;
+  z-index: 2;
+}
+
+#cloud-3 {
+  background: url('../clouds3.png');
+  background-repeat-y: no-repeat;
+  background-repeat-x: repeat;
+  background-position: bottom left;
+  animation: drift 150s linear;
+  animation-iteration-count: infinite;
+  background-color: #2f98b6;
+  z-index: 1;
+}
+
+@keyframes drift {
+  0% { transform: translateX(0) }
+  100% { transform: translateX(1920px) }
 }
 
 .light {
@@ -18,7 +86,7 @@ section.connect {
     position: absolute;
     width: 100%;
     bottom: 20px;
-    z-index: 4;
+    z-index: 14;
     color: #fff;
     letter-spacing: .1em;
     font-weight: 300;
@@ -38,7 +106,7 @@ section.connect {
 
   .icon-box {
     text-align: center;
-    z-index: 4;
+    z-index: 14;
     position: absolute;
     width: 100%;
     bottom: 23%;
@@ -47,14 +115,14 @@ section.connect {
     .icon {
       box-shadow: 0 0 0 3px rgba(255,255,255,1);
       overflow: hidden;
-      -webkit-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-      -moz-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+      -webkit-transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+      -moz-transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
       cursor: pointer;
       margin: 0px 5%;
       width: 70px;
       height: 70px;
-      border-radius: 50%;
+      // border-radius: 50%;
       position: relative;
       text-align: center;
       display: inline-block;
@@ -78,6 +146,9 @@ section.connect {
     .icon:hover {
       background: rgba(255,255,255,1);
       box-shadow: 0 0 0 8px rgba(255,255,255,0.3);
+      -ms-transform: scale(0.9); /* IE 9 */
+      -webkit-transform: scale(0.9); /* Safari */
+      transform: scale(0.9);
 
       .fa {
         color: #1B75BB;
@@ -91,10 +162,6 @@ section.connect {
     }
   }
 }
-
-
-
-
 
 .landing-sect {
   span {
@@ -115,6 +182,7 @@ section.connect {
     color: #51b6e5;
     font-weight: 300;
     padding-left: 53px;
+    z-index: 5;
 
     .highlight {
       color: #0e76bc;
@@ -149,7 +217,7 @@ section.connect {
 .square {
   text-align: center;
   color: #333;
-  background: #fff;
+  background: transparent;
   position:absolute;
   top: 42%;
   left: 42%;
@@ -160,7 +228,7 @@ section.connect {
     cursor: pointer;
     width: 130px;
     position: absolute;
-    top: 0;
+    top: 0px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -172,7 +240,7 @@ section.connect {
 .connect {
   div {
     opacity: 0;
-    transition: all .3s linear;
+    transition: opacity .3s linear;
   }
   &.active {
     div {
@@ -200,7 +268,7 @@ section.connect {
 
   &.p1 {
     background: #1894b8;
-    z-index: 6;
+    z-index: 16;
     right: -42%;
     top: 0;
     width: 100%;
@@ -234,7 +302,7 @@ section.connect {
 
   &.p2 {
     background: #0e566b;
-    z-index: 5;
+    z-index: 15;
     right: 0;
     bottom: 0;
     width: 42%;
@@ -256,7 +324,7 @@ section.connect {
 
   &.p3 {
     background: #20c2f1;
-    z-index: 3;
+    z-index: 13;
     right: 0;
     bottom: -20%;
     width: 100%;
@@ -288,15 +356,15 @@ section.connect {
 
     &.start {
       cursor: default;
-      -ms-transform: translateY(-14.2%); /* IE 9 */
-      -webkit-transform: translateY(-14.2%); /* Chrome, Safari, Opera */
-      transform: translateY(-14.2%);
+      -ms-transform: translateY(-13%); /* IE 9 */
+      -webkit-transform: translateY(-13%); /* Chrome, Safari, Opera */
+      transform: translateY(-13%);
     }
   }
 
   &.p4 {
     background: #b1e1ee;
-    z-index: 2;
+    z-index: 12;
     left: 0;
     top: 0;
     width: 42%;
