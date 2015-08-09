@@ -31,7 +31,7 @@ body {
     left: -2000px;
     position: absolute; }
   .clouds #cloud-1 {
-    background: url("../clouds1-alt.png");
+    background: url("../images/clouds1.png");
     background-repeat-y: no-repeat;
     background-repeat-x: repeat;
     background-position: bottom left;
@@ -39,7 +39,7 @@ body {
     animation-iteration-count: infinite;
     z-index: 3; }
   .clouds #cloud-2 {
-    background: url("../clouds2.png");
+    background: url("../images/clouds2.png");
     background-repeat-y: no-repeat;
     background-repeat-x: repeat;
     background-position: bottom left;
@@ -47,7 +47,7 @@ body {
     animation-iteration-count: infinite;
     z-index: 2; }
   .clouds #cloud-3 {
-    background: url("../clouds3.png");
+    background: url("../images/clouds3.png");
     background-repeat-y: no-repeat;
     background-repeat-x: repeat;
     background-position: bottom left;
@@ -73,67 +73,70 @@ section.stack .badges-container {
   right: 35%;
   z-index: 99; }
   section.stack .badges-container .box {
-    height: 150px;
-    width: 138px;
+    height: 140px;
+    width: 128px;
     cursor: pointer;
     position: absolute;
     display: none; }
     section.stack .badges-container .box#box-1 {
-      top: 116px;
-      left: 68px;
-      animation: flyDown .45s; }
-      section.stack .badges-container .box#box-1:hover .badge {
-        transform: translate(-116px, 68px); }
-    section.stack .badges-container .box#box-2 {
-      top: 235px;
-      left: 135px;
-      animation: flyUp .45s; }
-    section.stack .badges-container .box#box-3 {
-      top: 350px;
-      left: 68px;
-      animation: flyLeft .45s; }
-      section.stack .badges-container .box#box-3:hover .badge {
-        transform: translate(-116px, 0); }
-    section.stack .badges-container .box#box-4 {
-      top: 350px;
-      left: 206px;
-      animation: flyDown .65s; }
-      section.stack .badges-container .box#box-4:hover .badge {
-        transform: translate(116px, -68px); }
-    section.stack .badges-container .box#box-5 {
-      top: 0;
-      left: 139px;
-      animation: flyUp .65s; }
-      section.stack .badges-container .box#box-5:hover .badge {
-        transform: translate(0, -116px); }
-    section.stack .badges-container .box#box-6 {
       top: 0;
       left: 0;
-      animation: flyLeft .65s; }
-      section.stack .badges-container .box#box-6:hover .badge {
+      animation: flyDown .45s; }
+      section.stack .badges-container .box#box-1.move .badge {
         transform: translate(0, -116px); }
-    section.stack .badges-container .box#box-7 {
-      top: 116px;
-      left: 206px;
-      animation: flyDown .3s; }
-      section.stack .badges-container .box#box-7:hover .badge {
-        transform: translate(116px, 0); }
-    section.stack .badges-container .box#box-8 {
-      top: 583px;
-      left: 67px;
-      animation: flyUp .3s; }
-      section.stack .badges-container .box#box-8:hover .badge {
-        transform: translate(-116px, 68px); }
-    section.stack .badges-container .box#box-9 {
-      top: 466px;
-      left: 137px;
-      animation: flyLeft .3s;
-      perspective: 1000; }
-    section.stack .badges-container .box#box-10 {
-      top: 466px;
-      left: 275px;
+    section.stack .badges-container .box#box-2 {
+      top: 0;
+      left: 131px;
       animation: flyUp .45s; }
-      section.stack .badges-container .box#box-10:hover .badge {
+      section.stack .badges-container .box#box-2.move .badge {
+        transform: translate(116px, -68px); }
+    section.stack .badges-container .box#box-3 {
+      top: 109px;
+      left: 63px;
+      animation: flyLeft .45s; }
+      section.stack .badges-container .box#box-3.move .badge {
+        transform: translate(-116px, 68px); }
+    section.stack .badges-container .box#box-4 {
+      top: 218px;
+      left: 131px;
+      animation: flyDown .65s; }
+      section.stack .badges-container .box#box-4.move .badge {
+        transform: translate(-116px, 68px); }
+    section.stack .badges-container .box#box-5 {
+      top: 219px;
+      left: 264px;
+      animation: flyUp .65s; }
+      section.stack .badges-container .box#box-5.move .badge {
+        transform: translate(0, -116px); }
+    section.stack .badges-container .box#box-6 {
+      top: 326px;
+      left: 200px;
+      animation: flyLeft .65s; }
+      section.stack .badges-container .box#box-6.move .badge {
+        transform: scale(0, 0); }
+    section.stack .badges-container .box#box-7 {
+      top: 433px;
+      left: 136px;
+      animation: flyDown .3s; }
+      section.stack .badges-container .box#box-7.move .badge {
+        transform: translate(-116px, -68px); }
+    section.stack .badges-container .box#box-8 {
+      top: 434px;
+      left: 268px;
+      animation: flyUp .3s; }
+      section.stack .badges-container .box#box-8.move .badge {
+        transform: translate(116px, 0); }
+    section.stack .badges-container .box#box-9 {
+      top: 542px;
+      left: 69px;
+      animation: flyLeft .3s; }
+      section.stack .badges-container .box#box-9.move .badge {
+        transform: translate(-116px, 0); }
+    section.stack .badges-container .box#box-10 {
+      top: 542px;
+      left: 201px;
+      animation: flyUp .45s; }
+      section.stack .badges-container .box#box-10.move .badge {
         transform: translate(0, 116px); }
     section.stack .badges-container .box .badge {
       width: 100%;
@@ -142,43 +145,43 @@ section.stack .badges-container {
       position: relative;
       z-index: 2; }
       section.stack .badges-container .box .badge#badge-1 {
-        background: url("../badges/badge1.png");
+        background: url("../images/badges/badge1.png");
         background-size: 100%;
         background-repeat: no-repeat; }
       section.stack .badges-container .box .badge#badge-2 {
-        background: url("../badges/badge2.png");
+        background: url("../images/badges/badge2.png");
         background-size: 100%;
         background-repeat: no-repeat; }
       section.stack .badges-container .box .badge#badge-3 {
-        background: url("../badges/badge3.png");
+        background: url("../images/badges/badge3.png");
         background-size: 100%;
         background-repeat: no-repeat; }
       section.stack .badges-container .box .badge#badge-4 {
-        background: url("../badges/badge4.png");
+        background: url("../images/badges/badge4.png");
         background-size: 100%;
         background-repeat: no-repeat; }
       section.stack .badges-container .box .badge#badge-5 {
-        background: url("../badges/badge5.png");
+        background: url("../images/badges/badge5.png");
         background-size: 100%;
         background-repeat: no-repeat; }
       section.stack .badges-container .box .badge#badge-6 {
-        background: url("../badges/badge6.png");
+        background: url("../images/badges/badge6.png");
         background-size: 100%;
         background-repeat: no-repeat; }
       section.stack .badges-container .box .badge#badge-7 {
-        background: url("../badges/badge7.png");
+        background: url("../images/badges/badge7.png");
         background-size: 100%;
         background-repeat: no-repeat; }
       section.stack .badges-container .box .badge#badge-8 {
-        background: url("../badges/badge8.png");
+        background: url("../images/badges/badge8.png");
         background-size: 100%;
         background-repeat: no-repeat; }
       section.stack .badges-container .box .badge#badge-9 {
-        background: url("../badges/badge9.png");
+        background: url("../images/badges/badge9.png");
         background-size: 100%;
         background-repeat: no-repeat; }
       section.stack .badges-container .box .badge#badge-10 {
-        background: url("../badges/badge10.png");
+        background: url("../images/badges/badge10.png");
         background-size: 100%;
         background-repeat: no-repeat; }
     section.stack .badges-container .box span {
@@ -192,8 +195,6 @@ section.stack .badges-container {
       font-size: 16pt;
       color: #fff;
       z-index: 1; }
-      section.stack .badges-container .box span.line {
-        top: 20px; }
 
 section.connect .info-box {
   position: absolute;
