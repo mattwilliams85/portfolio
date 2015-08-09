@@ -8,16 +8,17 @@ body {
   -ms-user-select: none;
   user-select: none;
   font-family: 'Open Sans';
-  // background: #e0e0e0;
 }
 
-// .clouds.inverse {
-//   display: none;
-// }
+a {
+  text-decoration: none;
+  color: #49b9c0;
+}
 
-// .tag-box {
-//   color: #51b6e5;
-// }
+.light {
+  font-weight: 300;
+}
+
 
 .clouds {
   &.inverse {
@@ -33,7 +34,7 @@ body {
 
   .cloud {
     height: 50vh;
-    width: 4000px;
+    width: 8000px;
     left: -2000px;
     position: absolute;
   }
@@ -75,146 +76,222 @@ body {
   }
 }
 
-#test {
- top: 100px;
- &:hover {
-   #badge-1 {
-     transform: translate(-100px, -100px);
-   }
- 
- }
-}
+section.about {
+  width: 42%;
+  height: 100%;
+  left: 3%;
+  position: absolute;
 
-
-
-.light {
-  font-weight: 500;
-}
-
-section.stack {
-  .badges-container {
+  .about-box {
+    display: none;
     position: absolute;
     top: 0;
     bottom: 0;
     height: 740px;
-    margin: auto 0;
-    right: 35%;
+    width: 85%;
+    margin: auto auto;
     z-index: 99;
-    .box {
-      height: 140px;
-      width: 128px;
-      cursor: pointer;
-      position: absolute;
-      display: none;
+    max-width: 550px;
+    left: 0;
+    right: 0;
 
-      &#box-1 { 
-        top: 0; 
-        left: 0; 
-        animation: flyDown .45s;
-        &.move .badge { 
-          transform: translate(0,-116px);
-        }
-      }
-      &#box-2 { 
-        top: 0; 
-        left: 131px; 
-        animation: flyUp .45s;
-        &.move .badge { 
-          transform: translate(116px,-68px);
-        }
-      }
-      &#box-3 { 
-        top: 109px; 
-        left: 63px; 
-        animation: flyLeft .45s;
-        &.move .badge { 
-          transform: translate(-116px,68px);
-        }
-      }
-      &#box-4 { 
-        top: 218px; 
-        left: 131px; 
-        animation: flyDown .65s; 
-        &.move .badge { 
-          transform: translate(-116px,68px);
-        }
-      }
-      &#box-5 { 
-        top: 219px;
-        left: 264px;
-        animation: flyUp .65s;
-        &.move .badge { 
-          transform: translate(0,-116px);
-        }
-      }
-      &#box-6 { 
-        top: 326px;
-        left: 200px;
-        animation: flyLeft .65s;
-        &.move .badge { 
-          transform: scale(0,0);
-        }
-      }
-      &#box-7 { 
-        top: 433px;
-        left: 136px;
-        animation: flyDown .3s;
-        &.move .badge { 
-          transform: translate(-116px,-68px);
-        }
-      }
-      &#box-8 { 
-        top: 434px;
-        left: 268px;
-        animation: flyUp .3s;
-        &.move .badge { 
-          transform: translate(116px,0);
-        }
-      }
-      &#box-9 { 
-        top: 542px;
-        left: 69px;
-        animation: flyLeft .3s;
-        &.move .badge { 
-          transform: translate(-116px,0);
-        }
-      }
-      &#box-10 { 
-        top: 542px;
-        left: 201px;
-        animation: flyUp .45s;
-        &.move .badge { 
-          transform: translate(0,116px);
-        }
-      }
-      .badge {
-        width: 100%;
-        height: 100%;
-        transition: transform .2s;
-        position: relative;
-        z-index: 2;
-        @for $i from 1 through 10 {
-          &#badge-#{$i}  {
-            background: url('../images/badges/badge#{$i}.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-          }
-        }
-      }
-      span {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: auto auto;
-        text-align: center;
-        line-height: 104pt;
-        font-size: 16pt;
-        color: #fff;
-        z-index: 1;
+    .myface {
+      margin: 0 auto;
+      margin-top: 50px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      -webkit-animation: bounce .6s ease;
+      animation: bounce .6s ease;
+    }
+    .up-arrow {
+      display: block;
+      margin: 25px auto;
+      margin-top: 275px;
+    }
+    .header {
+      display: block;
+      text-align: center;
+      font-size: 23pt;
+      color: #49b9c0;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .detail {
+      display: block;
+      font-size: 16pt;
+      color: #555;
+      margin-left: 20px;
+      line-height: 24pt;
+    }
+  }
+}
+
+@keyframes bounce {
+  from, 60%, 75%, 90%, 100% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+section.stack {
+  display: none;
+  width: 42%;
+  right: 0;
+  height: 100%;
+  position: absolute;
+
+  .badges-box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 685px;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    width: 392px;
+  }
+
+  .box {
+    height: 140px;
+    width: 128px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+
+    &#box-1 { 
+      top: 0; 
+      left: 0; 
+      animation: flyDown .45s;
+      &.move .badge { 
+        transform: translate(0,-116px);
       }
     }
-
+    &#box-2 { 
+      top: 0; 
+      left: 131px; 
+      animation: flyUp .45s;
+      &.move .badge { 
+        transform: translate(116px,-68px);
+      }
+    }
+    &#box-3 { 
+      top: 109px; 
+      left: 63px; 
+      animation: flyLeft .45s;
+      &.move .badge { 
+        transform: translate(-116px,68px);
+      }
+    }
+    &#box-4 { 
+      top: 218px; 
+      left: 131px; 
+      animation: flyDown .65s; 
+      &.move .badge { 
+        transform: translate(-116px,68px);
+      }
+    }
+    &#box-5 { 
+      top: 219px;
+      left: 264px;
+      animation: flyUp .65s;
+      &.move .badge { 
+        transform: translate(0,-116px);
+      }
+    }
+    &#box-6 { 
+      top: 326px;
+      left: 200px;
+      animation: flyLeft .65s;
+      &.move .badge { 
+        transform: scale(0,0);
+      }
+    }
+    &#box-7 { 
+      top: 433px;
+      left: 136px;
+      animation: flyDown .3s;
+      &.move .badge { 
+        transform: translate(-116px,-68px);
+      }
+    }
+    &#box-8 { 
+      top: 434px;
+      left: 268px;
+      animation: flyUp .3s;
+      &.move .badge { 
+        transform: translate(116px,0);
+      }
+    }
+    &#box-9 { 
+      top: 542px;
+      left: 69px;
+      animation: flyLeft .3s;
+      &.move .badge { 
+        transform: translate(-116px,0);
+      }
+    }
+    &#box-10 { 
+      top: 542px;
+      left: 201px;
+      animation: flyUp .45s;
+      &.move .badge { 
+        transform: translate(0,116px);
+      }
+    }
+    .badge {
+      width: 100%;
+      height: 100%;
+      transition: transform .2s;
+      position: relative;
+      z-index: 2;
+      @for $i from 1 through 10 {
+        &#badge-#{$i}  {
+          background: url('../images/badges/badge#{$i}.png');
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto auto;
+      text-align: center;
+      line-height: 104pt;
+      font-size: 16pt;
+      color: #fff;
+      z-index: 1;
+    }
   }
 }
 
@@ -415,7 +492,7 @@ section.connect {
       /*text-shadow: 1px 4px 6px #559B90, 0 0 0 #000, 1px 4px 6px #559B90;*/
       color: #A9EDFF;
       left: 20px;
-      bottom: 10px;
+      bottom: 15px;
     }
 
     &.shutter {
@@ -449,7 +526,7 @@ section.connect {
       /*text-shadow: 1px 4px 6px #466661, 0 0 0 #000, 1px 4px 6px #466661;*/
       color: #49B9C0;
       top: 47%;
-      left: 20px;
+      left: 30px;
     }
 
     &.shutter {
@@ -470,7 +547,7 @@ section.connect {
     .header {
       /*text-shadow: 1px 4px 6px #DFEBE9, 0 0 0 #000, 1px 4px 6px #DFEBE9;*/
       color: #1778AE;
-      top: 10px;
+      top: 15px;
       right: 43.5%;
       opacity: 1;
       transition: opacity .1s, left .15s, right .3s;
@@ -478,7 +555,7 @@ section.connect {
 
     &.extend .header {
       left: auto;
-      right: 20px;
+      right: 25px;
     }
 
     &.start .header {
@@ -510,7 +587,7 @@ section.connect {
     .header {
       /*text-shadow: 1px 4px 6px #ACCBC5, 0 0 0 #000, 1px 4px 6px #ACCBC5;*/
       color: #208DAC;
-      right: 20px;
+      right: 25px;
       top: 47%;
     }
 

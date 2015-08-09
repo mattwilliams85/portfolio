@@ -9,6 +9,11 @@ $(document).ready(function(){
 
   $('.p2').on('click', function(){
     if ($(this).hasClass('active')) return;
+    $('.about-box').fadeIn();
+    $('.myface').hide();
+    setTimeout(function(){
+      $('.myface').show(); 
+    }, 700)
     var id = parseInt($(this).attr('id'));
     shutterPanels(id);
   });
@@ -23,7 +28,7 @@ $(document).ready(function(){
 
   $('.p4').on('click', function(){
     if ($(this).hasClass('active')) return;
-    $('.box').show();
+    $('.stack').show();
     $('.p3').addClass('shutter');
     $('.p1').addClass('retract');
     $('.p2').addClass('clear');
@@ -91,7 +96,7 @@ $(document).ready(function(){
   }
 
   function returnPanels() {
-    $('.clouds.inverse, .box').hide();
+    $('.clouds.inverse, .stack, .about-box').hide();
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
     for (var i = 1; i < 5; i++) {
