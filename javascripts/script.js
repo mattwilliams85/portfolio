@@ -1,5 +1,6 @@
 $(document).ready(function(){
   $('.p1').on('click', function(){
+    $('.icon-box').show();
     if ($(this).hasClass('active')) return;
     $('.connect').addClass('active');
     $('.p1').addClass('extend');
@@ -8,19 +9,19 @@ $(document).ready(function(){
   });
 
   $('.p2').on('click', function(){
-    if ($(this).hasClass('active')) return;
+    if ($(this).hasClass('active') || $(this).hasClass('clear')) return;
     $('.about-box').fadeIn();
     $('.myface').hide();
     setTimeout(function(){
       $('.myface').show(); 
-    }, 700)
+    }, 700);
     var id = parseInt($(this).attr('id'));
     shutterPanels(id);
   });
 
   $('.p3').on('click', function(){
+    if ($(this).hasClass('active') || $(this).hasClass('clear')) return;
     $('.clouds.inverse').show();
-    if ($(this).hasClass('active')) return;
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
     shutterPanels(id);
@@ -35,7 +36,7 @@ $(document).ready(function(){
   });
 
   $('.panel').on('click', function(){
-    if ($('.panel').hasClass('start')) return;
+    if ($(this).hasClass('start') || $(this).hasClass('clear')) return;
     if ($('.panel').hasClass('active')) {
       returnPanels();
     } else {
@@ -44,7 +45,7 @@ $(document).ready(function(){
   });
 
   $('.logo').on('click', function(){
-    $('.logo').off('mouseover mouseleave')
+    $('.logo').off('mouseover mouseleave');
     if ($('.p1, .p2, .p3, .p4').hasClass('shutter')) {
       returnPanels();
     } else {
@@ -59,12 +60,12 @@ $(document).ready(function(){
 
   $('.box').mouseover(function(){
    if ($(this).find('.badge').css('transform') !== 'none') return;
-    $(this).addClass('move')
+    $(this).addClass('move');
   });
 
   $('.box').mouseleave(function(){
     if ($(this).find('.badge').css('transform') === 'none') return;
-    $(this).removeClass('move')
+    $(this).removeClass('move');
   });
 
   function fadeIn() {
@@ -96,11 +97,11 @@ $(document).ready(function(){
   }
 
   function returnPanels() {
-    $('.clouds.inverse, .stack, .about-box').hide();
+    $('.clouds.inverse, .stack, .about-box, .icon-box').hide();
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
     for (var i = 1; i < 5; i++) {
-      $('#'+i).removeClass('shutter clear extend retract start active')
+      $('#'+i).removeClass('shutter clear extend retract start active');
     }
   }
 });

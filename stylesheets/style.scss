@@ -27,6 +27,7 @@ a {
     position: relative;
     -webkit-transform: scaleY(-1);
     .cloud {
+      pointer-events: none; 
       bottom: 0;
       top: -99vh;
     }
@@ -537,6 +538,7 @@ section.connect {
   }
 
   &.p3 {
+    pointer-events: all;
     background: #20c2f1;
     z-index: 13;
     right: 0;
