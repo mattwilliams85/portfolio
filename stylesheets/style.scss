@@ -45,7 +45,7 @@ a {
     background-repeat-y: no-repeat;
     background-repeat-x: repeat;
     background-position: bottom left;
-    animation: drift 250s linear;
+    animation: drift 300s linear;
     animation-iteration-count: infinite;
     z-index: 3;
   }
@@ -55,7 +55,7 @@ a {
     background-repeat-y: no-repeat;
     background-repeat-x: repeat;
     background-position: bottom left;
-    animation: drift 200s linear;
+    animation: drift 250s linear;
     animation-iteration-count: infinite;
     z-index: 2;
   }
@@ -65,7 +65,7 @@ a {
     background-repeat-y: no-repeat;
     background-repeat-x: repeat;
     background-position: bottom left;
-    animation: drift 150s linear;
+    animation: drift 200s linear;
     animation-iteration-count: infinite;
     background-color: #2f98b6;
     z-index: 1;
@@ -213,7 +213,7 @@ section.stack {
     }
     &#box-4 { 
       top: 218px; 
-      left: 131px; 
+      left: 132px; 
       animation: flyDown .65s; 
       &.move .badge { 
         transform: translate(-116px,68px);
@@ -221,7 +221,7 @@ section.stack {
     }
     &#box-5 { 
       top: 219px;
-      left: 264px;
+      left: 265px;
       animation: flyUp .65s;
       &.move .badge { 
         transform: translate(0,-116px);
