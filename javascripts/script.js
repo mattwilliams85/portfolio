@@ -1,15 +1,25 @@
 $(document).ready(function(){
-  $('.carousel').slick({
-    centerMode: true,
-    infinite: true,
-    slidesToShow: 3,
-    dotsCount: 4,
-    slidesToScroll: 1,
-    // dots: true,
-    arrows: false,
-    focusOnSelect: true,
-    speed: 700
-  });
+  function initCarousel() {
+    $('.carousel').slick({
+      centerMode: true,
+      infinite: true,
+      slidesToShow: 3,
+      dotsCount: 4,
+      slidesToScroll: 1,
+      // dots: true,
+      arrows: false,
+      focusOnSelect: true,
+      speed: 700
+    });
+
+    $('#test').slick({
+      infinite: true,
+      slidesToScroll: 1,
+      // dots: true,
+      // arrows: false,
+      speed: 700
+    });
+  }
 
 
   $('#cube-right').click(function(event){
@@ -25,34 +35,6 @@ $(document).ready(function(){
   $('.carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide){
     $('.cube').css("transform","rotateY(0)");
     xAngle = 0, yAngle = 0;
-  });
-
-
-  var xAngle = 0, yAngle = 0;
-  function rotateCube(cube, direction) {
-    switch(direction) {
-        case 'left': // left
-            yAngle -= 90;
-            break;
-
-        case 'right': // right
-            yAngle += 90;
-            break;
-    };
-    cube.css("transform","rotateY("+yAngle+"deg)");
-  }
-
-  $('body').keydown(function(evt) {
-      switch(evt.keyCode) {
-          case 37: // left
-              yAngle -= 90;
-              break;
-
-          case 39: // right
-              yAngle += 90;
-              break;
-      };
-      $('.slick-current').find('.cube').css("transform","rotateY("+yAngle+"deg)");
   });
 
   $('.landing-sect span').fadeIn(8000);
@@ -78,9 +60,10 @@ $(document).ready(function(){
   });
 
   $('.p3').on('click', function(){
-    if ($(this).hasClass('active') || $(this).hasClass('clear')) return;
-    $('.clouds').hide();
-    $('.projects').css('visibility','visible');
+    if ($(this).is('.active, .clear, .start')) return;
+    // $('.clouds').hide();
+    $('.projects').show();
+    initCarousel()
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
     shutterPanels(id);
@@ -144,7 +127,6 @@ $(document).ready(function(){
   function returnPanels() {
     $('.clouds').fadeIn();
     $('.clouds.inverse, .stack, .about-box, .icon-box').hide();
-    $('.projects').css('visibility','hidden');
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
     for (var i = 1; i < 5; i++) {

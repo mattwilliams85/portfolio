@@ -13,6 +13,12 @@ a {
   text-decoration: none;
   color: #49b9c0; }
 
+#test {
+  height: 35vh; }
+  #test .shot-1 {
+    height: 35vh;
+    transform: scale(1.2, 1.2); }
+
 .light {
   font-weight: 300; }
 
@@ -61,17 +67,18 @@ a {
   100% {
     transform: translateX(1920px); } }
 section.projects {
-  visibility: hidden;
+  display: none;
   width: 90%;
   margin: 0 auto;
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 99; }
+  z-index: 15;
+  top: 5vh; }
   section.projects .chevron-box {
     position: absolute;
-    height: 300px;
-    width: 390px;
+    height: 35vh;
+    width: 30%;
     margin: auto auto;
     left: 0;
     right: 0;
@@ -79,7 +86,7 @@ section.projects {
     bottom: 0; }
     section.projects .chevron-box .fa {
       position: absolute;
-      bottom: -4px;
+      bottom: 0;
       color: #fff;
       background: rgba(0, 0, 0, 0.3);
       padding: 5px;
@@ -87,9 +94,9 @@ section.projects {
       z-index: 99;
       padding: 15px 20px; }
       section.projects .chevron-box .fa.fa-chevron-left {
-        left: -4px; }
+        left: 0; }
       section.projects .chevron-box .fa.fa-chevron-right {
-        right: -6px; }
+        right: 0; }
   section.projects .carousel {
     text-align: center;
     position: relative; }
@@ -111,40 +118,15 @@ section.projects {
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
-      height: 400px;
+      height: 35vh;
       transition: transform .7s ease;
-      -webkit-perspective: 500px;
       cursor: pointer; }
-      section.projects .carousel .slick-slide .cube {
-        position: absolute;
-        margin: auto auto;
-        height: 240px;
-        width: 330px;
-        -webkit-transition: -webkit-transform .5s linear;
-        -webkit-transform-style: preserve-3d;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0; }
-        section.projects .carousel .slick-slide .cube .side-1 {
-          -webkit-transform: rotateX(90deg) translateZ(100px); }
-        section.projects .carousel .slick-slide .cube .side-2 {
-          -webkit-transform: translateZ(125px); }
-        section.projects .carousel .slick-slide .cube .side-3 {
-          -webkit-transform: rotateY(90deg) translateZ(125px); }
-        section.projects .carousel .slick-slide .cube .side-4 {
-          -webkit-transform: rotateY(180deg) translateZ(125px); }
-        section.projects .carousel .slick-slide .cube .side-5 {
-          -webkit-transform: rotateY(-90deg) translateZ(125px); }
-        section.projects .carousel .slick-slide .cube .side-6 {
-          -webkit-transform: rotateX(-90deg) translateZ(100px) rotate(180deg); }
-        section.projects .carousel .slick-slide .cube figure {
-          position: absolute;
-          height: 200px;
-          width: 250px;
-          background-image: url("http://www.benbaker.co.uk/img/3-refract.jpg");
-          background-size: 100%;
-          background-position: center center; }
+      section.projects .carousel .slick-slide .shot-1 {
+        height: 100%;
+        background-image: url("http://www.benbaker.co.uk/img/3-refract.jpg");
+        background-size: 100%;
+        background-position: center center;
+        background-repeat: no-repeat; }
       section.projects .carousel .slick-slide.slick-center {
         transform: scale(1.2, 1.2);
         opacity: 1;
