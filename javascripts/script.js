@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  $('.landing-sect span').fadeIn(8000);
+
   $('.p1').on('click', function(){
     $('.icon-box').show();
     if ($(this).hasClass('active')) return;
@@ -21,7 +23,7 @@ $(document).ready(function(){
 
   $('.p3').on('click', function(){
     if ($(this).hasClass('active') || $(this).hasClass('clear')) return;
-    $('.clouds.inverse').show();
+    $('.clouds').hide();
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
     shutterPanels(id);
@@ -45,18 +47,14 @@ $(document).ready(function(){
   });
 
   $('.logo').on('click', function(){
-    $('.logo').off('mouseover mouseleave');
     if ($('.p1, .p2, .p3, .p4').hasClass('shutter')) {
       returnPanels();
     } else {
       $('.p3').addClass('start');
-      $('.clouds.inverse').show();
+      $('.clouds.inverse').fadeIn();
       shutterPanels(0);
     }
   });
-
-  $('.logo').mouseover(fadeIn);
-  $('.logo').mouseleave(fadeOut);
 
   $('.box').mouseover(function(){
    if ($(this).find('.badge').css('transform') !== 'none') return;
@@ -67,16 +65,6 @@ $(document).ready(function(){
     if ($(this).find('.badge').css('transform') === 'none') return;
     $(this).removeClass('move');
   });
-
-  function fadeIn() {
-    $('.landing-sect span').stop();
-    $('.landing-sect span').fadeIn(3000);
-  }
-
-  function fadeOut() {
-    $('.landing-sect span').stop();
-    $('.landing-sect span').fadeOut(3000);
-  }
 
   function shutterPanels(id) {
     hideClouds();
@@ -97,6 +85,7 @@ $(document).ready(function(){
   }
 
   function returnPanels() {
+    $('.clouds').fadeIn();
     $('.clouds.inverse, .stack, .about-box, .icon-box').hide();
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
