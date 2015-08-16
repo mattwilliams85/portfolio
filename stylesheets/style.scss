@@ -78,13 +78,158 @@ a {
 }
 
 section.projects {
+  visibility: hidden;
+  width: 90%;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  .chevron-box {
+    position: absolute;
+    height: 300px;
+    width: 390px;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    .fa {
+      position: absolute;
+      bottom: -4px;
+      color: #fff;
+      background: rgba(0,0,0,0.3);
+      padding: 5px;
+      cursor: pointer;
+      z-index: 99;
+      padding: 15px 20px;
+      &.fa-chevron-left {
+        left: -4px;
+      }
+      &.fa-chevron-right {
+        right: -6px;
+      }
+    }
+  }
+
   .carousel {
-    .slide {
-      width: 200px;
-      height: 150px;
-      display: inline;
-      img {
-        width: 200px;
+    text-align: center;
+    position: relative;
+
+    .slick-next, .slick-prev {
+      background: none;
+      border: 0;
+      outline: none;
+      position: absolute;
+      bottom: -20px;
+      margin: auto;
+      cursor: pointer;
+    }
+    .slick-prev {
+      left: 0;
+    }
+    .slick-next {
+      right: 0;
+    }
+    .slick-slide {
+      transform: scale(.5,.5);
+      outline: none;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 400px;
+      transition: transform .7s ease;
+      -webkit-perspective: 500px;
+      cursor: pointer;
+
+      .cube {
+        position: absolute;
+        margin: auto auto;
+        height: 240px;
+        width: 330px;
+        -webkit-transition: -webkit-transform .5s linear;
+        -webkit-transform-style: preserve-3d;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        .side-1  {
+          -webkit-transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .side-2 {
+          -webkit-transform: translateZ(125px);
+        }
+
+        .side-3 {
+          -webkit-transform: rotateY(90deg) translateZ(125px);
+        }
+
+        .side-4 {
+          -webkit-transform: rotateY(180deg) translateZ(125px);
+        }
+
+        .side-5 {
+          -webkit-transform: rotateY(-90deg) translateZ(125px);
+        }
+
+        .side-6 {
+          -webkit-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+        }
+
+        figure {
+          position: absolute;
+          height: 200px;
+          width: 250px; 
+          background-image: url('http://www.benbaker.co.uk/img/3-refract.jpg');
+          background-size: 100%;
+          background-position: center center;
+
+        }
+      }
+
+      &.slick-center {
+        transform: scale(1.2,1.2);
+        opacity: 1;
+        cursor: default;
+      }
+    }
+  }
+  .slick-active {
+    button {
+      background-color: #333 !important;
+    }
+  }
+
+  .slick-dots {
+    list-style: none;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+
+      button {
+        cursor: pointer;
+        border: 2px solid #333;
+        display: inline;
+        background: #fff;
+        border-radius: 50%;
+        color: transparent;
+        height: 2px;
+        width: 2px;
+        padding: 3px;
+        outline: none;
+        transition: background-color .2s;
       }
     }
   }
@@ -455,6 +600,7 @@ section.connect {
   .logo {
     cursor: pointer;
     height: 8vw;
+    max-height: 110px;
     position: absolute;
     top: 0;
     bottom: 0;

@@ -60,12 +60,121 @@ a {
     transform: translateX(0); }
   100% {
     transform: translateX(1920px); } }
-section.projects .carousel .slide {
-  width: 200px;
-  height: 150px;
-  display: inline; }
-  section.projects .carousel .slide img {
-    width: 200px; }
+section.projects {
+  visibility: hidden;
+  width: 90%;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 99; }
+  section.projects .chevron-box {
+    position: absolute;
+    height: 300px;
+    width: 390px;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; }
+    section.projects .chevron-box .fa {
+      position: absolute;
+      bottom: -4px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 5px;
+      cursor: pointer;
+      z-index: 99;
+      padding: 15px 20px; }
+      section.projects .chevron-box .fa.fa-chevron-left {
+        left: -4px; }
+      section.projects .chevron-box .fa.fa-chevron-right {
+        right: -6px; }
+  section.projects .carousel {
+    text-align: center;
+    position: relative; }
+    section.projects .carousel .slick-next, section.projects .carousel .slick-prev {
+      background: none;
+      border: 0;
+      outline: none;
+      position: absolute;
+      bottom: -20px;
+      margin: auto;
+      cursor: pointer; }
+    section.projects .carousel .slick-prev {
+      left: 0; }
+    section.projects .carousel .slick-next {
+      right: 0; }
+    section.projects .carousel .slick-slide {
+      transform: scale(0.5, 0.5);
+      outline: none;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 400px;
+      transition: transform .7s ease;
+      -webkit-perspective: 500px;
+      cursor: pointer; }
+      section.projects .carousel .slick-slide .cube {
+        position: absolute;
+        margin: auto auto;
+        height: 240px;
+        width: 330px;
+        -webkit-transition: -webkit-transform .5s linear;
+        -webkit-transform-style: preserve-3d;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; }
+        section.projects .carousel .slick-slide .cube .side-1 {
+          -webkit-transform: rotateX(90deg) translateZ(100px); }
+        section.projects .carousel .slick-slide .cube .side-2 {
+          -webkit-transform: translateZ(125px); }
+        section.projects .carousel .slick-slide .cube .side-3 {
+          -webkit-transform: rotateY(90deg) translateZ(125px); }
+        section.projects .carousel .slick-slide .cube .side-4 {
+          -webkit-transform: rotateY(180deg) translateZ(125px); }
+        section.projects .carousel .slick-slide .cube .side-5 {
+          -webkit-transform: rotateY(-90deg) translateZ(125px); }
+        section.projects .carousel .slick-slide .cube .side-6 {
+          -webkit-transform: rotateX(-90deg) translateZ(100px) rotate(180deg); }
+        section.projects .carousel .slick-slide .cube figure {
+          position: absolute;
+          height: 200px;
+          width: 250px;
+          background-image: url("http://www.benbaker.co.uk/img/3-refract.jpg");
+          background-size: 100%;
+          background-position: center center; }
+      section.projects .carousel .slick-slide.slick-center {
+        transform: scale(1.2, 1.2);
+        opacity: 1;
+        cursor: default; }
+  section.projects .slick-active button {
+    background-color: #333 !important; }
+  section.projects .slick-dots {
+    list-style: none;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    padding: 0; }
+    section.projects .slick-dots li {
+      display: inline-block;
+      margin: 0 10px; }
+      section.projects .slick-dots li button {
+        cursor: pointer;
+        border: 2px solid #333;
+        display: inline;
+        background: #fff;
+        border-radius: 50%;
+        color: transparent;
+        height: 2px;
+        width: 2px;
+        padding: 3px;
+        outline: none;
+        transition: background-color .2s; }
 
 section.about {
   width: 42%;
@@ -380,6 +489,7 @@ section.connect .icon-box {
   .square .logo {
     cursor: pointer;
     height: 8vw;
+    max-height: 110px;
     position: absolute;
     top: 0;
     bottom: 0;
