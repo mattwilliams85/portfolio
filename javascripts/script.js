@@ -1,17 +1,26 @@
 $(document).ready(function(){
-  function initCarousel() {
-    $('.carousel').slick({
-      centerMode: true,
-      infinite: true,
-      slidesToShow: 3,
-      dotsCount: 4,
-      slidesToScroll: 1,
-      // dots: true,
-      arrows: false,
-      focusOnSelect: true,
-      speed: 700
-    });
 
+  $('.carousel').slick({
+    centerMode: true,
+    infinite: true,
+    slidesToShow: 3,
+    dotsCount: 4,
+    slidesToScroll: 1,
+    // dots: true,
+    arrows: false,
+    focusOnSelect: true,
+    speed: 700
+  });
+
+  $('#test').slick({
+    infinite: true,
+    slidesToScroll: 1,
+    // dots: true,
+    // arrows: false,
+    speed: 700
+  });
+
+  function initCarousel() {
     $('#test').slick({
       infinite: true,
       slidesToScroll: 1,
@@ -62,8 +71,7 @@ $(document).ready(function(){
   $('.p3').on('click', function(){
     if ($(this).is('.active, .clear, .start')) return;
     // $('.clouds').hide();
-    $('.projects').show();
-    initCarousel()
+    $('.projects').css('visibility','visible');
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
     shutterPanels(id);
@@ -127,6 +135,7 @@ $(document).ready(function(){
   function returnPanels() {
     $('.clouds').fadeIn();
     $('.clouds.inverse, .stack, .about-box, .icon-box').hide();
+    setTimeout(function(){ $('.projects').css('visibility','hidden') },300)
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
     for (var i = 1; i < 5; i++) {

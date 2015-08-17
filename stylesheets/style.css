@@ -67,13 +67,13 @@ a {
   100% {
     transform: translateX(1920px); } }
 section.projects {
-  display: none;
+  visibility: hidden;
   width: 90%;
   margin: 0 auto;
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 15;
+  z-index: 11;
   top: 5vh; }
   section.projects .chevron-box {
     position: absolute;
@@ -115,11 +115,12 @@ section.projects {
     section.projects .carousel .slick-slide {
       transform: scale(0.5, 0.5);
       outline: none;
+      opacity: 0.7;
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
       height: 35vh;
-      transition: transform .7s ease;
+      transition: transform .7s ease, opacity .7s ease;
       cursor: pointer; }
       section.projects .carousel .slick-slide .shot-1 {
         height: 100%;

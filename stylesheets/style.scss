@@ -86,13 +86,13 @@ a {
 }
 
 section.projects {
-  display: none;
+  visibility: hidden;
   width: 90%;
   margin: 0 auto;
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 15;
+  z-index: 11;
   top: 5vh;
 
   .chevron-box {
@@ -145,11 +145,12 @@ section.projects {
     .slick-slide {
       transform: scale(.5,.5);
       outline: none;
+      opacity: 0.7;
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
       height: 35vh;
-      transition: transform .7s ease;
+      transition: transform .7s ease, opacity .7s ease;
       cursor: pointer;
 
       .shot-1 {
