@@ -15,18 +15,37 @@ a {
   color: #49b9c0;
 }
 
-#test {
-  height: 35vh;
-  .shot-1 {
-    height: 35vh;
-    transform: scale(1.2,1.2)
+//Foundation Overrides
+.reveal-modal {
+  background-color: #444 !important;
+  border: solid 1px #333 !important;
+  top: 2% !important;
+  // overflow-y: scroll !important;
+  height: 96% !important;
+  padding-top: 40px !important;
+  * {
+    color: #fff !important;
+  }
+  .close-reveal-modal {
+    top: 0 !important;
+    right: 15px !important;
+    color: #ccc !important;
   }
 }
+
+//Scrollbar Overrides
+.scrollbar-outer {
+  height: 100%;
+  .scroll-element { background-color: #444 !important }
+  .scroll-element_track { background-color: #333 !important }
+  .scroll-bar { background-color: #888 !important; cursor: pointer }
+  .scroll-element:hover .scroll-bar { background-color: #999 !important }
+}
+// 
 
 .light {
   font-weight: 300;
 }
-
 
 .clouds {
   &.inverse {
@@ -86,14 +105,15 @@ a {
 }
 
 section.projects {
-  visibility: hidden;
-  width: 90%;
+  // visibility: hidden;
+  // width: 100%;
+  display: none;
   margin: 0 auto;
   position: absolute;
   left: 0;
   right: 0;
   z-index: 11;
-  top: 5vh;
+  // top: 5vh;
 
   .chevron-box {
     position: absolute;
@@ -143,28 +163,56 @@ section.projects {
       right: 0;
     }
     .slick-slide {
-      transform: scale(.5,.5);
+      // transform: scale(.6,.6);
       outline: none;
-      opacity: 0.7;
+      // opacity: 0.7;
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
-      height: 35vh;
-      transition: transform .7s ease, opacity .7s ease;
+      // transition: transform .7s ease, opacity .7s ease;
       cursor: pointer;
 
-      .shot-1 {
-        height: 100%;
-        background-image: url('http://www.benbaker.co.uk/img/3-refract.jpg');
-        background-size: 100%;
-        background-position: center center;
-        background-repeat: no-repeat;
+      // .slide-button {
+      //   position: absolute;
+      //   bottom: 0;
+      //   right: 0;
+      //   z-index: 1;
+      //   padding: 5px 10px;
+      //   background-color: #000;
+      //   opacity: 0;
+      //   transition: opacity 1s;
+      //   cursor: pointer;
+
+      //   .fa {
+      //     color: #fff;
+      //     font-size: 20pt;
+      //   }
+      // }
+
+      .slide-mask {
+        height: 100%; 
+        width: 100%;
+        background: rgba(0,0,0,0.3);
       }
 
-      &.slick-center {
-        transform: scale(1.2,1.2);
+      img {
+        width: 100%;
+        max-height: 350px;
+        max-width: 600px;
+        -webkit-transition: -webkit-filter .7s linear;
+       // transition:filter .7s linear !important;
+        filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */  
+      }
+
+      &.slick-current {
         opacity: 1;
-        cursor: default;
+        cursor: pointer;
+        img {
+          filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+          -webkit-filter: grayscale(0%);
+        }
       }
     }
   }
@@ -179,7 +227,7 @@ section.projects {
     display: block;
     margin: 0 auto;
     position: absolute;
-    bottom: -30px;
+    bottom: 100px;
     left: 0;
     right: 0;
     padding: 0;
@@ -593,7 +641,7 @@ section.connect {
   }
 }
 
-.panel {
+.pane {
   position: absolute;
   cursor: pointer;
   -ms-transform: -ms-transform .3s;
@@ -623,7 +671,6 @@ section.connect {
     height: 42vh; 
 
     .header {
-      /*text-shadow: 1px 4px 6px #559B90, 0 0 0 #000, 1px 4px 6px #559B90;*/
       color: #A9EDFF;
       left: 35px;
       bottom: 25px;

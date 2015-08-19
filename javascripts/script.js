@@ -1,34 +1,36 @@
 $(document).ready(function(){
 
-  $('.carousel').slick({
-    centerMode: true,
-    infinite: true,
-    slidesToShow: 3,
-    dotsCount: 4,
-    slidesToScroll: 1,
-    // dots: true,
-    arrows: false,
-    focusOnSelect: true,
-    speed: 700
-  });
-
-  $('#test').slick({
-    infinite: true,
-    slidesToScroll: 1,
-    // dots: true,
-    // arrows: false,
-    speed: 700
-  });
+  $(document).foundation();
+  jQuery('.scrollbar-outer').scrollbar();
 
   function initCarousel() {
-    $('#test').slick({
+    $('.projects').show();
+    $('.carousel').slick({
+      centerMode: true,
       infinite: true,
+      slidesToShow: 3,
+      dotsCount: 4,
       slidesToScroll: 1,
+      // autoplay: true,
+      autoplaySpeed: 1500,
       // dots: true,
-      // arrows: false,
+      arrows: false,
+      focusOnSelect: true,
       speed: 700
     });
   }
+
+  function destroyCarousel() {
+    if (!$('.projects').is(":visible")) return;
+    $('.carousel').slick('unslick');
+    $('.projects').hide();
+  }
+
+  $('.slide-img').click(function(){
+    if (!$(this).parent().is('.slick-current')) return;
+    $('.modal-img').attr('src','images/logos/'+ $(this).attr('id') + '-full.jpg')
+    $('#modal').foundation('reveal', 'open');
+  })
 
 
   $('#cube-right').click(function(event){
@@ -71,10 +73,11 @@ $(document).ready(function(){
   $('.p3').on('click', function(){
     if ($(this).is('.active, .clear, .start')) return;
     // $('.clouds').hide();
-    $('.projects').css('visibility','visible');
+    $('.projects').show();
+    initCarousel();
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
-    shutterPanels(id);
+    shutterPanels(id)
   });
 
   $('.p4').on('click', function(){
@@ -85,9 +88,9 @@ $(document).ready(function(){
     $('.p2').addClass('clear');
   });
 
-  $('.panel').on('click', function(){
+  $('.pane').on('click', function(){
     if ($(this).hasClass('start') || $(this).hasClass('clear')) return;
-    if ($('.panel').hasClass('active')) {
+    if ($('.pane').hasClass('active')) {
       returnPanels();
     } else {
       $(this).toggleClass('active');
@@ -135,7 +138,7 @@ $(document).ready(function(){
   function returnPanels() {
     $('.clouds').fadeIn();
     $('.clouds.inverse, .stack, .about-box, .icon-box').hide();
-    setTimeout(function(){ $('.projects').css('visibility','hidden') },300)
+    setTimeout(function(){ destroyCarousel(); },300)
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
     for (var i = 1; i < 5; i++) {
