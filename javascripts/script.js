@@ -74,7 +74,7 @@ $(document).ready(function(){
     dragging = false;
     setTimeout(function(){
       dragging = true;
-    },100)
+    },1)
   });
 
   $('.slide-img').mouseup(function(){

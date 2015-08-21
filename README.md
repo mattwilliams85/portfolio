@@ -6,6 +6,7 @@
 * improve modal design
 
 * carousel hover effect
+* SVG Logo hover effect
 * Redo Angular badge (keep html5?)
 * Fix About-Me Pane Gradient
 * Fine Tune Cloud Parallax
