@@ -1,23 +1,59 @@
 $(document).ready(function(){
 
+  var modalText = {
+    roambi: {
+      header: 'Roambi.com',
+      color: '#FF8FBD',
+      detail: 'Visual data and analytics for big business.',
+      bullets: ['Wordpress','Visual Analytics','Hubspot Integration']
+    },
+    walker: {
+      header: 'WalkerTracker',
+      color: '#81FFCC',
+      detail: 'Fitness Tracking for big business.',
+      bullets: ['Device Integration','Visual Analytics','Gamification']
+    },
+    powur: {
+      header: 'Powur.com',
+      color: '#8BE7FF',
+      detail: 'Solar Panel MLM Platform.',
+      bullets: ['Rails App','Visual Analytics','Team Tree Management']
+    },
+    mystand: {
+      header: 'MyStand',
+      color: '#FF4E4E',
+      detail: 'Social Media charity platform',
+      bullets: ['Social Networking','Media Sharing','Gamfication']
+    },
+    never: {
+      header: 'NeverSurrender',
+      color: '#FFD2E0',
+      detail: 'ALS foundation website.',
+      bullets: ['Single Page App','Visual Effects','Mobile Device Support']
+    },
+  }
+
   $(document).foundation();
   jQuery('.scrollbar-outer').scrollbar();
 
   function initCarousel() {
+    var slidesToShow = 3;
+    if ($(window).width() < 650) slidesToShow = 1;
     $('.projects').show();
     $('.carousel').slick({
       centerMode: true,
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: slidesToShow,
       dotsCount: 4,
       slidesToScroll: 1,
-      // autoplay: true,
-      autoplaySpeed: 1500,
+      autoplay: false,
+      autoplaySpeed: 2000,
       // dots: true,
       arrows: false,
       focusOnSelect: true,
       speed: 700
     });
+    $('.carousel').slick('slickPlay');
   }
 
   function destroyCarousel() {
@@ -26,27 +62,45 @@ $(document).ready(function(){
     $('.projects').hide();
   }
 
-  $('.slide-img').click(function(){
-    if (!$(this).parent().is('.slick-current')) return;
-    $('.modal-img').attr('src','images/logos/'+ $(this).attr('id') + '-full.jpg')
-    $('#modal').foundation('reveal', 'open');
+  $(window).resize(function(){
+    if(!$('.projects').hasClass('active') || $(window).width() > 650) return;
+    destroyCarousel()
+    initCarousel();
   })
 
+  var dragging;
 
-  $('#cube-right').click(function(event){
-    var cube = $('.slick-center').find('.cube');
-    rotateCube(cube, 'right');
+  $('.slide-img').mousedown(function(){
+    dragging = false;
+    setTimeout(function(){
+      dragging = true;
+    },100)
   });
 
-  $('#cube-left').click(function(event){
-    var cube = $('.slick-center').find('.cube');
-    rotateCube(cube, 'left');
-  });
+  $('.slide-img').mouseup(function(){
+    if (!$(this).parent().is('.slick-current')) return;
+    var id = $(this).attr('id');
+    if (!dragging) {
+      fillModal(id);
+      $('#modal').foundation('reveal', 'open');
+      $('.carousel').slick('slickPause');
+    }
+  })
 
-  $('.carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    $('.cube').css("transform","rotateY(0)");
-    xAngle = 0, yAngle = 0;
-  });
+  function fillModal(id) {
+    $('#modal').find('.header').text(modalText[id].header)
+                               .css('color',modalText[id].color)
+    $('#modal').find('.detail').text(modalText[id].detail)
+
+    $.each($('#modal').find('li'), function(index, value ) {
+      $(this).text(modalText[id].bullets[index])
+    });
+    $('.modal-img').attr('src','images/logos/'+ id + '-full.jpg')
+  }
+
+  $('.slide-img').click(function(){
+    $('.carousel').slick('slickPause');
+  })
 
   $('.landing-sect span').fadeIn(8000);
 
@@ -74,6 +128,7 @@ $(document).ready(function(){
     if ($(this).is('.active, .clear, .start')) return;
     // $('.clouds').hide();
     $('.projects').show();
+    $('.projects').addClass('active');
     initCarousel();
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
@@ -137,7 +192,7 @@ $(document).ready(function(){
 
   function returnPanels() {
     $('.clouds').fadeIn();
-    $('.clouds.inverse, .stack, .about-box, .icon-box').hide();
+    $('.clouds.inverse, .stack, .about-box').hide();
     setTimeout(function(){ destroyCarousel(); },300)
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
