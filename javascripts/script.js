@@ -4,19 +4,19 @@ $(document).ready(function(){
     roambi: {
       header: 'Roambi.com',
       color: '#FF8FBD',
-      detail: 'Visual data and analytics for big business.',
-      bullets: ['Wordpress','Visual Analytics','Hubspot Integration']
+      detail: 'Roambi provides analytics, reporting, and business intelligence for companies to use on the go.',
+      bullets: ['Wordpress','Visual Analytics','Hubspot Integration'],
     },
     walker: {
       header: 'WalkerTracker',
       color: '#81FFCC',
-      detail: 'Fitness Tracking for big business.',
+      detail: 'Walker Tracker offers goal management, fitness tracking, and team competitions to companies for internal use.',
       bullets: ['Device Integration','Visual Analytics','Gamification']
     },
     powur: {
       header: 'Powur.com',
       color: '#8BE7FF',
-      detail: 'Solar Panel MLM Platform.',
+      detail: 'Powur is a multi-level marketing platform for lead generation, recruitment, and team building.',
       bullets: ['Rails App','Visual Analytics','Team Tree Management']
     },
     mystand: {
@@ -28,19 +28,18 @@ $(document).ready(function(){
     never: {
       header: 'NeverSurrender',
       color: '#FFD2E0',
-      detail: 'ALS foundation website.',
-      bullets: ['Single Page App','Visual Effects','Mobile Device Support']
+      detail: 'NeverSurrender is a platform for the new ALS foundation mobile app in hopes to raise awareness and research funding to fight ALS.',
+      bullets: ['Single Page App','Parallax Effects','Fluid Design']
     },
   }
 
   $(document).foundation();
-  jQuery('.scrollbar-outer').scrollbar();
 
-  function initCarousel() {
+  function initProjects() {
     var slidesToShow = 3;
     if ($(window).width() < 650) slidesToShow = 1;
     $('.projects').show();
-    $('.carousel').slick({
+    $('#projects-carousel').slick({
       centerMode: true,
       infinite: true,
       slidesToShow: slidesToShow,
@@ -51,14 +50,24 @@ $(document).ready(function(){
       // dots: true,
       arrows: false,
       focusOnSelect: true,
+      pauseOnHover: true,
       speed: 700
     });
-    $('.carousel').slick('slickPlay');
+    $('#projects-carousel').slick('slickPlay');
   }
+
+  function initModal() {
+    
+  }
+
+  $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
+
+  });
+
 
   function destroyCarousel() {
     if (!$('.projects').is(":visible")) return;
-    $('.carousel').slick('unslick');
+    $('#projects-carousel').slick('unslick');
     $('.projects').hide();
   }
 
@@ -68,39 +77,55 @@ $(document).ready(function(){
     initCarousel();
   })
 
-  var dragging;
+  // var dragging;
 
-  $('.slide-img').mousedown(function(){
-    dragging = false;
-    setTimeout(function(){
-      dragging = true;
-    }, 500)
-  });
+  // $('.slide-img').mousedown(function(){
+  //   dragging = false;
+  //   setTimeout(function(){
+  //     dragging = true;
+  //   }, 500)
+  // });
 
   $('.slide-img').mouseup(function(){
     if (!$(this).parent().is('.slick-current')) return;
     var id = $(this).attr('id');
-    if (!dragging) {
+    // if (!dragging) {
       fillModal(id);
       $('#modal').foundation('reveal', 'open');
-      $('.carousel').slick('slickPause');
-    }
+      setTimeout(function(){ $('#modal-carousel').slick({
+        adaptiveHeight: true,
+        arrows: true,
+        prevArrow: '<i class="fa fa-chevron-left"></i>',
+        nextArrow: '<i class="fa fa-chevron-right"></i>'
+      }) }, 150);
+      // $('.carousel').slick('slickPause');
+    // }
+  })
+
+  $('.slide-img').mouseover(function(){
+    $('#projects-carousel').slick('slickPause');
   })
 
   function fillModal(id) {
+    if ($('#modal-carousel').is('.slick-initialized')) {
+      $('#modal-carousel').slick('unslick');
+    }
     $('#modal').find('.header').text(modalText[id].header)
-                               .css('color',modalText[id].color)
+                               // .css('color',modalText[id].color)
     $('#modal').find('.detail').text(modalText[id].detail)
 
     $.each($('#modal').find('li'), function(index, value ) {
       $(this).text(modalText[id].bullets[index])
     });
-    $('.modal-img').attr('src','images/logos/'+ id + '-full.jpg')
+    $.each($('#modal').find('.slide'), function(index, value) {
+      $(this).children('img').attr('src', 'images/slides/' + id + '-' + index + '.jpg');
+    })
+    
   }
 
-  $('.slide-img').click(function(){
-    $('.carousel').slick('slickPause');
-  })
+  // $('.slide-img').click(function(){
+  //   $('.carousel').slick('slickPause');
+  // })
 
   $('.landing-sect span').fadeIn(8000);
 
@@ -109,8 +134,10 @@ $(document).ready(function(){
     if ($(this).hasClass('active')) return;
     $('.connect').addClass('active');
     $('.p1').addClass('extend');
+
     $('.p2, .p4').addClass('shutter');
     $('.p3').addClass('clear extend');
+    $('.icon').addClass('pop-in');
   });
 
   $('.p2').on('click', function(){
@@ -129,7 +156,7 @@ $(document).ready(function(){
     // $('.clouds').hide();
     $('.projects').show();
     $('.projects').addClass('active');
-    initCarousel();
+    initProjects();
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
     shutterPanels(id)
@@ -192,10 +219,15 @@ $(document).ready(function(){
 
   function returnPanels() {
     $('.clouds').fadeIn();
-    $('.clouds.inverse, .stack, .about-box').hide();
-    setTimeout(function(){ destroyCarousel(); },300)
+    $('.clouds.inverse, .stack').hide();
+    setTimeout(function(){ 
+      $('.about-box').hide();
+      $('.icon').removeClass('pop-in');
+      destroyCarousel(); 
+    },300)
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
+
     for (var i = 1; i < 5; i++) {
       $('#'+i).removeClass('shutter clear extend retract start active');
     }

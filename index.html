@@ -4,14 +4,12 @@
   <title></title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="scrollbar/jquery.scrollbar.css">
   <link rel="stylesheet" type="text/css" href="slick/slick.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/modernizr.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
-  <script type="text/javascript" src="scrollbar/jquery.scrollbar.min.js"></script>
 
   <script src="slick/slick.min.js"></script>
   <script src="javascripts/script.js"></script>
@@ -19,18 +17,22 @@
 <body>
 
 <div id="modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <div class="info-box">
-  <span class="header"><a href="" target="_blank"></a></span>
-  <span class="detail"></span>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+  <div class="large-8 columns">
+    <div class="carousel" id="modal-carousel">
+      <div class="slide"><img></div>
+      <div class="slide"><img></div>
+      <div class="slide"><img></div>
+    </div>
   </div>
-  <div class="scroll-box">
-    <div class="scrollbar-outer">
-      <img class="modal-img">
+  <div class="large-4 columns"> 
+    <div class="info-box">
+      <span class="header"><a href="" target="_blank"></a></span>
+      <span class="detail"></span>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
@@ -57,7 +59,7 @@
 
   <section class="projects">
 <!--     <div class="carousel-mask"></div> -->
-    <div class="carousel">
+    <div class="carousel" id="projects-carousel">
       <div class="slide">
 <!--         <div class="slide-button">
           <i class="fa fa-external-link-square"></i>
@@ -84,33 +86,33 @@
       <img class="myface" src="images/myface.png">
       <img class="up-arrow" src="images/up-arrow.png">
       <span class="header">Who's this guy?</span>
-      <span class="detail light">I am sure you don't want to hear my life story, so I'll be quick. I'm currently a front-end developer working at a start-up incubator called <a href="http://www.eyecuelab.com">EyeCue Lab</a> in Portland, OR. I studied Psychology in college and moved into programming soon after. I love turning great ideas into great websites and breaking those tired cookie cutter molds. I also have a serious passion for UX effects and animations. If you're interested in <a href="mailto:mattwilliams85@gmail.com">contacting</a> me, don't hesitate!</span>
+      <span class="detail light">I am sure you don't want to hear my life story, so I'll be quick. I'm currently the front-end developer for a start-up incubator called <a href="http://www.eyecuelab.com">EyeCue Lab</a> in Portland, OR. I studied Psychology in college and moved into programming soon after. I love turning great ideas into great websites and breaking those tired cookie cutter molds. I also have a serious passion for UX effects and animations. If you're interested in <a href="mailto:mattwilliams85@gmail.com">contacting</a> me, don't hesitate!</span>
     </div>
   </section>
 
   <section class="connect">
     <div class="icon-box">
-      <div class="icon"> 
+      <div class="icon" id="icon-1"> 
         <a href="mailto:mattwilliams85@gmail.com">
           <i class="fa fa-paper-plane"></i>
         </a>
       </div>
-      <div class="icon"> 
+      <div class="icon" id="icon-2"> 
         <a href="https://www.linkedin.com/in/mattwilliams85">
           <i class="fa fa-linkedin"></i>
         </a>
       </div>
-      <div class="icon"> 
+      <div class="icon" id="icon-3"> 
         <a href="https://www.facebook.com/matthew.williams.351">
           <i class="fa fa-facebook"></i>
         </a>
       </div>
-      <div class="icon"> 
+      <div class="icon" id="icon-4"> 
         <a href="https://instagram.com/infinite_edge/">
           <i class="fa fa-instagram"></i>
         </a>
       </div>
-      <div class="icon"> 
+      <div class="icon" id="icon-5"> 
         <a href="http://codepen.io/matthewwilliams/">
           <i class="fa fa-codepen"></i>
         </a>
@@ -126,11 +128,11 @@
     <div class="badges-box">
       <div class="box" id="box-1">
         <div class="badge" id="badge-1"></div>
-        <span>Illustrator</span>
+        <span>illustrator</span>
       </div>
       <div class="box" id="box-2">
         <div class="badge" id="badge-2"></div>
-        <span>Photoshop</span>
+        <span>photoshop</span>
       </div>
       <div class="box" id="box-3">
         <div class="badge" id="badge-3"></div>
