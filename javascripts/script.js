@@ -11,7 +11,7 @@ $(document).ready(function(){
       header: 'WalkerTracker',
       color: '#81FFCC',
       detail: 'Walker Tracker offers goal management, fitness tracking, and team competitions to companies for internal use.',
-      bullets: ['Device Integration','Visual Analytics','Gamification']
+      bullets: ['Gamification','Visual Analytics','Device Integration']
     },
     powur: {
       header: 'Powur.com',
@@ -22,8 +22,8 @@ $(document).ready(function(){
     mystand: {
       header: 'MyStand',
       color: '#FF4E4E',
-      detail: 'Social Media charity platform',
-      bullets: ['Social Networking','Media Sharing','Gamfication']
+      detail: 'MyStand is a crowd-funding, media sharing website, that has you donating actions instead of money out of your pocket.',
+      bullets: ['Social Networking','Media Sharing','Crowd-funding']
     },
     never: {
       header: 'NeverSurrender',
@@ -31,7 +31,7 @@ $(document).ready(function(){
       detail: 'NeverSurrender is a platform for the new ALS foundation mobile app in hopes to raise awareness and research funding to fight ALS.',
       bullets: ['Single Page App','Parallax Effects','Fluid Design']
     },
-  }
+  };
 
   $(document).foundation();
 
@@ -39,31 +39,25 @@ $(document).ready(function(){
     var slidesToShow = 3;
     if ($(window).width() < 650) slidesToShow = 1;
     $('.projects').show();
-    $('#projects-carousel').slick({
+    var slider = $('#projects-carousel').slick({
       centerMode: true,
       infinite: true,
       slidesToShow: slidesToShow,
       dotsCount: 4,
       slidesToScroll: 1,
       autoplay: false,
-      autoplaySpeed: 2000,
       // dots: true,
       arrows: false,
       focusOnSelect: true,
       pauseOnHover: true,
-      speed: 700
+      speed: 700,
+      autoplaySpeed: 2000
     });
-    $('#projects-carousel').slick('slickPlay');
+    $(slider).slick('slickPlay');
+    setTimeout(function(){
+      $(slider).slick("slickNext");
+    },400);
   }
-
-  function initModal() {
-    
-  }
-
-  $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
-
-  });
-
 
   function destroyCarousel() {
     if (!$('.projects').is(":visible")) return;
@@ -73,9 +67,9 @@ $(document).ready(function(){
 
   $(window).resize(function(){
     if(!$('.projects').hasClass('active') || $(window).width() > 650) return;
-    destroyCarousel()
+    destroyCarousel();
     initCarousel();
-  })
+  });
 
   // var dragging;
 

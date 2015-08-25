@@ -2,18 +2,21 @@
 
 # To Do
 * responsiveness
+  -Slides positioning on XL screens
 
-* improve modal design
-
-* carousel hover effect
-* SVG Logo hover effect
 * Improve Cloud Images
+* Fix modal image loading bug
+* carousel hover effect
 * Update Modal Text
 * Redo Angular badge (keep html5?)
 * Fix About-Me Pane Gradient
 * Fine Tune Cloud Parallax
 * Exit Animations
 * Try out different font family
+* Tweak Autoplay speed (fast-start, slower transition)
+* improve modal design
+* Smaller Modal jpgs?
+* Badges with hard edges?
 
 * Flip animation (front/back) for social icons?
 
