@@ -139,10 +139,13 @@ section.projects {
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 11; }
+  z-index: 11;
+  height: 58%; }
   section.projects .carousel {
     text-align: center;
     position: relative; }
+    section.projects .carousel .slick-dots {
+      bottom: -70px; }
     section.projects .carousel .slick-next, section.projects .carousel .slick-prev {
       background: none;
       border: 0;
@@ -163,11 +166,46 @@ section.projects {
       filter: gray;
       transition: filter .7s linear;
       -webkit-transition: -webkit-filter .7s linear;
-      overflow: hidden; }
+      overflow: hidden;
+      position: relative; }
+      section.projects .carousel .slick-slide .slide-wrap {
+        max-width: 600px;
+        overflow: hidden;
+        margin: 0 auto; }
       section.projects .carousel .slick-slide img {
         width: 100%;
-        max-height: 350px;
-        max-width: 600px; }
+        max-height: 350px; }
+      section.projects .carousel .slick-slide .top {
+        position: relative;
+        transition: transform .4s ease;
+        z-index: 2;
+        backface-visibility: hidden;
+        transform: translateZ(0); }
+      section.projects .carousel .slick-slide .bot {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1; }
+      section.projects .carousel .slick-slide .slide-button {
+        position: absolute;
+        bottom: 10%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.3);
+        transition: background-color .7s;
+        width: 36%;
+        max-width: 170px;
+        padding: 10px; }
+        section.projects .carousel .slick-slide .slide-button.lefty {
+          right: 45%; }
+        section.projects .carousel .slick-slide .slide-button.righty {
+          left: 45%; }
+        section.projects .carousel .slick-slide .slide-button:hover {
+          background-color: rgba(0, 0, 0, 0.5); }
       section.projects .carousel .slick-slide.slick-center {
         cursor: pointer;
         -webkit-filter: grayscale(0%);

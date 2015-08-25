@@ -185,6 +185,7 @@ section.projects {
   left: 0;
   right: 0;
   z-index: 11;
+  height: 58%;
   // top: 5vh;
 
   // .chevron-box {
@@ -219,6 +220,10 @@ section.projects {
     text-align: center;
     position: relative;
 
+    .slick-dots {
+      bottom: -70px;
+    }
+
     .slick-next, .slick-prev {
       background: none;
       border: 0;
@@ -243,33 +248,60 @@ section.projects {
       transition: filter .7s linear;
       -webkit-transition: -webkit-filter .7s linear;
       overflow: hidden;
-      // .slide-button {
-      //   position: absolute;
-      //   bottom: 0;
-      //   right: 0;
-      //   z-index: 1;
-      //   padding: 5px 10px;
-      //   background-color: #000;
-      //   opacity: 0;
-      //   transition: opacity 1s;
-      //   cursor: pointer;
+      position: relative;
 
-      //   .fa {
-      //     color: #fff;
-      //     font-size: 20pt;
-      //   }
-      // }
-
-      // .slide-mask {
-      //   height: 100%; 
-      //   width: 100%;
-      //   background: rgba(0,0,0,0.3);
-      // }
-
+      .slide-wrap {
+        max-width: 600px;
+        
+        overflow: hidden;
+        margin: 0 auto;
+      }
       img {
         width: 100%;
         max-height: 350px;
-        max-width: 600px;
+      }
+
+
+
+      .top {
+        position: relative;
+        transition: transform .4s ease;
+        z-index: 2;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+
+      .bot {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .slide-button {
+        position: absolute;
+        bottom: 10%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        z-index: 1;
+        background-color: rgba(0,0,0,0.3);
+        transition: background-color .7s;
+        width: 36%;
+        max-width: 170px;
+        padding: 10px;
+
+        &.lefty {
+          right: 45%;
+        }
+        &.righty {
+          left: 45%;
+        }
+        &:hover {
+          background-color: rgba(0,0,0,0.5);
+        }
       }
 
       &.slick-center {

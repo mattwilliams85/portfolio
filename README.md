@@ -4,8 +4,7 @@
 * responsiveness
   - Slides positioning on XL screens
 * Improve Cloud Images
-* Fix modal image loading bug
-* carousel hover effect
+* Logo shake
 
 * Firefox Testing
 * Safari Testing
@@ -18,6 +17,7 @@
 * Refactor JS
 * Refactor HTML
 
+* Refine Slide Autoplay (dots click pause)
 * Redo Angular badge (keep html5?)
 * Fix About-Me Pane Gradient
 * Fine Tune Cloud Parallax
@@ -31,7 +31,7 @@
 * Try out different font family
 * Flip animation (front/back) for social icons?
 * Exit Animations
-* Remove reveal modal, replace with card flip?
+* Replace card shrink with card flip?
 * Seperate Mobile Version?
 * Remove Foundation / Carousel?
 
