@@ -3,20 +3,21 @@
 ##FOR LAUNCH
 * Improve Cloud Images
 
-* Firefox Testing
-* Safari Testing
 * IE Testing
 * Mobile Testing
 * Tablet Testing
+* Redo Angular badge (keep html5?)
 
 ##EVENTUAL
 * Refactor CSS
 * Refactor JS
 * Refactor HTML
 
+* Add ms-webkits
+* Make P3 extend instead of starting with width: 100%
+* Improve Vertical Responsiveness
 * Refine Slide Autoplay (dots click pause)
-* Redo Angular badge (keep html5?)
-* Fix About-Me Pane Gradient
+* Fix About-Me Pane Gradient (OR use it on other panes!)
 * Fine Tune Cloud Parallax
 * Smaller Modal jpgs for smaller screens
 * Refine Modal Text
@@ -24,11 +25,12 @@
 * Replace CDN links with actual files
 
 ##OPTIONAL
-* Badges with hard edges?
+* Badges with hard edges
+* Pane Hover state
 * Try out different font family
-* Flip animation (front/back) for social icons?
+* Flip animation (front/back) for social icons
 * Exit Animations
-* Replace card shrink with card flip?
-* Seperate Mobile Version?
-* Remove Foundation / Carousel?
+* Replace card shrink with card flip
+* Seperate Mobile Version
+* Remove Foundation / Carousel
 
