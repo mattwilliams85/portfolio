@@ -2,9 +2,7 @@
 
 ##FOR LAUNCH
 * responsiveness
-  - Slides positioning on XL screens
 * Improve Cloud Images
-* Logo shake
 
 * Firefox Testing
 * Safari Testing
