@@ -35,10 +35,11 @@ $(document).ready(function(){
 
   $(document).foundation();
 
-  var slider = $('#projects-carousel')
+  var slider = $('#projects-carousel');
 
-  function initProjects() {
+  function initCarousel() {
     var slidesToShow = 3;
+    if ($(window).width() < 800) slidesToShow = 2;
     if ($(window).width() < 650) slidesToShow = 1;
     $('.projects').show();
     $(slider).slick({
@@ -68,7 +69,7 @@ $(document).ready(function(){
   }
 
   $(window).resize(function(){
-    if(!$('.projects').hasClass('active') || $(window).width() > 650) return;
+    if(!$('.projects').hasClass('active')) return;
     destroyCarousel();
     initCarousel();
   });
@@ -128,7 +129,7 @@ $(document).ready(function(){
     
   }
 
-  $('.landing-sect span').fadeIn(8000);
+  $('.landing-sect span').fadeTo(8000, 1);
 
   $('.p1').on('click', function(){
     $('.icon-box').show();
@@ -156,7 +157,7 @@ $(document).ready(function(){
     if ($(this).is('.active, .clear, .start')) return;
     $('.projects').show();
     $('.projects').addClass('active');
-    initProjects();
+    initCarousel();
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
     shutterPanels(id)
@@ -180,7 +181,7 @@ $(document).ready(function(){
   });
 
   $('.logo').on('click', function(){
-    $(this).removeClass('shake')
+    $(this).removeClass('shake');
     if ($('.p1, .p2, .p3, .p4').hasClass('shutter')) {
       returnPanels();
     } else {

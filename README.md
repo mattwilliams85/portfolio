@@ -1,7 +1,6 @@
 # portfolio
 
 ##FOR LAUNCH
-* responsiveness
 * Improve Cloud Images
 
 * Firefox Testing

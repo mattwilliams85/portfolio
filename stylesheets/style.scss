@@ -21,7 +21,6 @@ a {
   background-color: #3f3f3f !important;
   border: solid 1px #333 !important;
   top: 2% !important;
-  // height: 96% !important;
   padding-top: 40px !important;
   padding-bottom: 40px !important;
   outline: none;
@@ -45,10 +44,6 @@ a {
     font-weight: 300;
     color: #eee;
     font-style: italic;
-  }
-
-  .large-8 {
-    // padding: 0;
   }
 
   ul {
@@ -96,27 +91,6 @@ a {
     background: #222;
   }
 }
-
-//Scrollbar Overrides
-.scroll-box {
-  overflow: hidden;
-  /* Firefox */
-  height: -moz-calc(100% - 170px);
-  /* WebKit */
-  height: -webkit-calc(100% - 170px);
-  /* Opera */
-  height: -o-calc(100% - 170px);
-  /* Standard */
-  height: calc(100% - 170px);
-  .scrollbar-outer {
-    height: 100%;
-    .scroll-element { background-color: #444 !important }
-    .scroll-element_track { background-color: #333 !important }
-    .scroll-bar { background-color: #888 !important; cursor: pointer }
-    .scroll-element:hover .scroll-bar { background-color: #999 !important }
-  }
-}
-// 
 
 .light {
   font-weight: 300;
@@ -177,8 +151,6 @@ a {
 }
 
 section.projects {
-  // visibility: hidden;
-  // width: 100%;
   display: none;
   margin: 0 auto;
   position: absolute;
@@ -186,35 +158,6 @@ section.projects {
   right: 0;
   z-index: 11;
   height: 58%;
-  // top: 5vh;
-
-  // .chevron-box {
-  //   position: absolute;
-  //   height: 35vh;
-  //   width: 30%;
-  //   margin: auto auto;
-  //   left: 0;
-  //   right: 0;
-  //   top: 0;
-  //   bottom: 0;
-
-  //   .fa {
-  //     position: absolute;
-  //     bottom: 0;
-  //     color: #fff;
-  //     background: rgba(0,0,0,0.3);
-  //     padding: 5px;
-  //     cursor: pointer;
-  //     z-index: 99;
-  //     padding: 15px 20px;
-  //     &.fa-chevron-left {
-  //       left: 0;
-  //     }
-  //     &.fa-chevron-right {
-  //       right: 0;
-  //     }
-  //   }
-  // }
 
   .carousel {
     text-align: center;
@@ -252,7 +195,6 @@ section.projects {
 
       .slide-wrap {
         max-width: 600px;
-        
         overflow: hidden;
         margin: 0 auto;
       }
@@ -260,8 +202,6 @@ section.projects {
         width: 100%;
         max-height: 350px;
       }
-
-
 
       .top {
         position: relative;
@@ -333,9 +273,9 @@ section.projects {
 
       button {
         cursor: pointer;
-        border: 2px solid #333;
         display: inline;
-        background: #fff;
+        border: 2px solid #333;
+        background: transparent;
         border-radius: 50%;
         color: transparent;
         height: 2px;
@@ -463,7 +403,7 @@ section.stack {
       left: 0; 
       animation: flyDown .45s;
       &.move .badge { 
-        transform: translate(0,-116px);
+        transform: translate(0,-100%);
       }
     }
     &#box-2 { 
@@ -471,7 +411,7 @@ section.stack {
       left: 116px; 
       animation: flyUp .45s;
       &.move .badge { 
-        transform: translate(116px,-68px);
+        transform: translate(100%,-50%);
       }
     }
     &#box-3 { 
@@ -479,7 +419,7 @@ section.stack {
       left: 58px;
       animation: flyLeft .45s;
       &.move .badge { 
-        transform: translate(-116px,68px);
+        transform: translate(-100%,50%);
       }
     }
     &#box-4 { 
@@ -487,7 +427,7 @@ section.stack {
       left: 117px;
       animation: flyDown .65s; 
       &.move .badge { 
-        transform: translate(-116px,68px);
+        transform: translate(-100%,50%);
       }
     }
     &#box-5 { 
@@ -495,7 +435,7 @@ section.stack {
       left: 235px;
       animation: flyUp .65s;
       &.move .badge { 
-        transform: translate(0,-116px);
+        transform: translate(0,-100%);
       }
     }
     &#box-6 { 
@@ -511,7 +451,7 @@ section.stack {
       left: 117px;
       animation: flyDown .3s;
       &.move .badge { 
-        transform: translate(-116px,-68px);
+        transform: translate(-100%,-50%);
       }
     }
     &#box-8 { 
@@ -519,7 +459,7 @@ section.stack {
       left: 237px;
       animation: flyUp .3s;
       &.move .badge { 
-        transform: translate(116px,0);
+        transform: translate(100%,0);
       }
     }
     &#box-9 { 
@@ -527,7 +467,7 @@ section.stack {
       left: 59px;
       animation: flyLeft .3s;
       &.move .badge { 
-        transform: translate(-116px,0);
+        transform: translate(-100%,0);
       }
     }
     &#box-10 { 
@@ -535,7 +475,7 @@ section.stack {
       left: 177px;
       animation: flyUp .45s;
       &.move .badge { 
-        transform: translate(0,116px);
+        transform: translate(0,100%);
       }
     }
     .badge {
@@ -669,7 +609,7 @@ section.connect {
 .landing-sect {
   span {
     cursor: default;
-    display: none;
+    opacity: 0;
   }
 
   .title {
@@ -713,7 +653,7 @@ section.connect {
   }
 
   &.shutter {
-    display: none;
+    opacity: 0;
   }
 }
 
@@ -937,19 +877,198 @@ section.connect {
 }
 
 @media only screen and (max-width: 70em), screen and (max-height: 55em)  {
+  .pane {
+    .header {
+      font-size: 20pt;
+    }
+  }
+
   section.about .about-box .detail {
     font-size: 12pt;
     line-height: 21pt;
   }
+
+  section.stack {
+    .badges-box {
+      height: 535px;
+      width: 305px;
+
+      .box {
+        height: 110px;
+        width: 100px;
+
+        span {
+          line-height: 85pt;
+          font-size: 13pt;
+        }
+
+        &#box-2 {
+          left: 101px;
+        }
+        &#box-3 {
+          top: 85px;
+          left: 50px;
+        }
+        &#box-4 {
+          top: 169px;
+          left: 102px;
+        }
+        &#box-5 {
+          top: 171px;
+          left: 205px;
+        }
+        &#box-6 {
+          top: 254px;
+          left: 152px;
+        }
+        &#box-7 {
+          top: 339px;
+          left: 102px;
+        }
+        &#box-8 {
+          top: 339px;
+          left: 205px;
+        }
+        &#box-9 {
+          top: 425px;
+          left: 49px;
+        }
+        &#box-10 {
+          top: 425px;
+          left: 153px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 64.063em){
+  .landing-sect .tag-box {
+    span {
+      font-size: 10pt;
+    }
+    .center {
+      margin: 0 30px;
+    }
+  }
 }
 
 @media only screen and (max-width: 50em){
-  section.about .about-box .detail {
-    font-size: 10pt;
-    line-height: 16pt;
+  .slick-dots {
+    visibility: hidden;
+  }
+  section.about .about-box {
+    width: 95%;
+
+    .header {
+      font-size: 16pt;
+    }
+    .detail {
+      font-size: 10pt;
+      line-height: 15pt;
+    }
   }
 
+  section.connect {
+    .icon-box .icon {
+      margin: 0 3%;
+    }
+    .info-box {
+      .left {
+        display: block;
+      }
+      .right {
+        float: left !important;
+        margin-left: 30px;
+        display: block;
+      }
+    }
+  }
+  .landing-sect {
+    .title {
+      font-size: 20pt;
+      padding-left: 10px;
+    }
+    .tag-box {
+      margin-bottom: -40px;
+      .center {
+        margin: 30px 0 0 0;
+      }
+      span {
+        font-size: 10pt;
+        display: block;
+        margin-top: 30px;
+      }
+    }
+  }
+  .pane {
+    .header {
+      font-size: 16pt;
+    }
+  }
+
+  section.stack {
+    .badges-box {
+      height: 410px;
+      width: 235px;
+
+      .box {
+        height: 85px;
+        width: 78px;
+
+        span {
+          line-height: 65pt;
+          font-size: 10pt;
+        }
+
+        &#box-2 {
+          left: 80px;
+        }
+        &#box-3 {
+          top: 65px;
+          left: 40px;
+        }
+        &#box-4 {
+          top: 129px;
+          left: 80px;
+        }
+        &#box-5 {
+          top: 131px;
+          left: 160px;
+        }
+        &#box-6 {
+          top: 195px;
+          left: 118px;
+        }
+        &#box-7 {
+          top: 259px;
+          left: 78px;
+        }
+        &#box-8 {
+          top: 259px;
+          left: 159px;
+        }
+        &#box-9 {
+          top: 326px;
+          left: 39px;
+        }
+        &#box-10 {
+          top: 327px;
+          left: 119px;
+        }
+      }
+    }
+  }
 }
+
+@media only screen and (max-width: 40em){
+  section.connect {
+    .icon-box .icon {
+      margin: 0 1%;
+    }
+  }
+}
+
 
 //ANIMATIONS
 @-webkit-keyframes toBottomFromTop {
@@ -1035,13 +1154,6 @@ section.connect {
     transform: scale(1, 1)
   }
 }
-
-// @media only screen and (max-width: 64.063em) { 
-//   .square .logo {
-//     width: 110px;
-//   }
-// }
-
 
 
 
