@@ -14,8 +14,8 @@
 * Refactor HTML
 
 * Add ms-webkits
-* Make P3 extend instead of starting with width: 100%
 * Improve Vertical Responsiveness
+* better Roambi pictures (from main site!)
 * Refine Slide Autoplay (dots click pause)
 * Fix About-Me Pane Gradient (OR use it on other panes!)
 * Fine Tune Cloud Parallax
