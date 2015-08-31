@@ -1,19 +1,16 @@
 # portfolio
 
 ##FOR LAUNCH
-* IE Testing (on real PC)
-* Refactor JS
-* Arrow Navigation (remove dots?)
 * Mobile Testing
 * Tablet Testing
 * Redo Angular badge (keep html5?)
-* Fix modal loading issue
 * Preloader
 
 ##EVENTUAL
 * Refactor CSS
 * Refactor HTML
 
+* Second JS Refactor
 * Improve Vertical Responsiveness
 * Fix About-Me Pane Gradient (OR use it on other panes!)
 * Fine Tune Cloud Parallax
@@ -21,6 +18,7 @@
 * Refine Modal Text
 * improve modal design
 * Replace CDN links with actual files
+* Fix modal loading issue
 
 ##OPTIONAL
 * Badges with hard edges
