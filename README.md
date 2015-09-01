@@ -9,7 +9,6 @@
 ##EVENTUAL
 * Refactor CSS
 * Refactor HTML
-
 * Improve Vertical Responsiveness
 * Fine Tune Cloud Parallax
 * Refine Modal Text
