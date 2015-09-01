@@ -60,6 +60,7 @@ $(document).ready(function(){
   $(window).resize(function(){
     if(!$('.projects').hasClass('active') || 
        windowWidth === $(window).width()) return;
+    windowWidth = $(window).width();
     destroyCarousel();
     initCarousel();
   });

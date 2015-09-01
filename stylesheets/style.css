@@ -134,10 +134,10 @@ section.projects {
     cursor: pointer; }
     section.projects .fa.fa-chevron-left {
       left: 35%;
-      animation: bounceInLeft .35s ease-in; }
+      animation: bounceInLeft .5s ease-in; }
     section.projects .fa.fa-chevron-right {
       right: 35%;
-      animation: bounceInRight .35s ease-in; }
+      animation: bounceInRight .5s ease-in; }
   section.projects .carousel {
     text-align: center;
     position: relative; }
@@ -185,6 +185,7 @@ section.projects {
         left: 0;
         z-index: 1; }
       section.projects .carousel .slick-slide .slide-button {
+        font-size: 12pt;
         position: absolute;
         bottom: 10%;
         right: 0;
@@ -748,7 +749,10 @@ section.connect .icon-box {
   .landing-sect .tag-box span {
     font-size: 10pt; }
   .landing-sect .tag-box .center {
-    margin: 0 30px; } }
+    margin: 0 30px; }
+
+  section.projects .carousel .slick-slide .slide-button {
+    font-size: 8pt; } }
 @media only screen and (max-width: 50em) {
   .slick-dots {
     visibility: hidden; }
@@ -760,6 +764,9 @@ section.connect .icon-box {
     section.about .about-box .detail {
       font-size: 10pt;
       line-height: 15pt; }
+
+  section.projects .carousel .slick-slide .slide-button {
+    font-size: 12pt; }
 
   section.connect .icon-box .icon {
     margin: 0 3%; }
@@ -880,7 +887,7 @@ section.connect .icon-box {
   100% {
     transform: translateX(0); } }
 @keyframes bounceInLeft {
-  20% {
+  30% {
     transform: translateX(-50vw); }
   50% {
     transform: translateX(0); }
@@ -889,7 +896,7 @@ section.connect .icon-box {
   100% {
     transform: translateX(0); } }
 @keyframes bounceInRight {
-  20% {
+  30% {
     transform: translateX(50vw); }
   50% {
     transform: translateX(0); }

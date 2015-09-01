@@ -175,12 +175,12 @@ section.projects {
 
     &.fa-chevron-left {
       left: 35%;
-      animation: bounceInLeft .35s ease-in;
+      animation: bounceInLeft .5s ease-in;
 
     }
     &.fa-chevron-right {
       right: 35%;
-      animation: bounceInRight .35s ease-in;
+      animation: bounceInRight .5s ease-in;
     }
   }
 
@@ -245,6 +245,7 @@ section.projects {
       }
 
       .slide-button {
+        font-size: 12pt;
         position: absolute;
         bottom: 10%;
         right: 0;
@@ -882,6 +883,7 @@ section.connect {
     }
   }
 
+
   section.about .about-box .detail {
     font-size: 12pt;
     line-height: 21pt;
@@ -950,6 +952,9 @@ section.connect {
       margin: 0 30px;
     }
   }
+  section.projects .carousel .slick-slide .slide-button {
+    font-size: 8pt;
+  }
 }
 
 @media only screen and (max-width: 50em){
@@ -966,6 +971,10 @@ section.connect {
       font-size: 10pt;
       line-height: 15pt;
     }
+  }
+
+  section.projects .carousel .slick-slide .slide-button {
+    font-size: 12pt;
   }
 
   section.connect {
@@ -1160,7 +1169,7 @@ section.connect {
 }
 
 @keyframes bounceInLeft {
-  20% {
+  30% {
     transform: translateX(-50vw);
   }
   50% {
@@ -1175,7 +1184,7 @@ section.connect {
 }
 
 @keyframes bounceInRight {
-  20% {
+  30% {
     transform: translateX(50vw);
   }
   50% {
